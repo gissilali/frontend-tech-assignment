@@ -1,14 +1,20 @@
-import React from 'react';
-import family from './family.svg';
+import React from "react";
+import family from "./family.svg";
+import MilestoneBubble from "./components/MilestoneBubble";
+import Timeline from "./components/Timeline";
+
+export interface TimelineEvent {
+  imageSrc: string;
+  imageAlt: string;
+  label: string;
+}
 
 function App() {
+  const timelineEvents: TimelineEvent[] = [];
+
   return (
-    <main>
-     <div 
-        style={{background: "#173F4B", width: "130px", height: "136px", boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.25)"}}>
-          <img src={family} alt="Family" />
-          <p style={{textAlign: "center"}}>Baby's birth</p>
-     </div>
+    <main className="bg-primary h-screen">
+      <Timeline events={timelineEvents} />
     </main>
   );
 }
