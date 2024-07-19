@@ -5,7 +5,7 @@ export interface MilestoneBubbleProps {
   imgSrc: string;
   imgAlt: string;
   label: string;
-  pointerPlacement: "top" | "bottom";
+  pointerPlacement: "top" | "bottom" | "top-end" | "bottom-end";
   type?: "primary" | "secondary";
 }
 

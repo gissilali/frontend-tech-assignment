@@ -36,6 +36,20 @@ body {
   @apply border-b-primary-dark;
 }
 
+.bubble.top-end::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 80%;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-top: 0;
+  margin-left: -8px;
+  margin-top: -8px;
+  @apply border-b-primary-dark;
+}
+
 .bubble.primary {
   @apply bg-primary-dark;
 }
@@ -110,4 +124,10 @@ body {
   text-align: center;
 
   display: block; /* hide by default */
+}
+
+.vertical-indicator.end {
+  align-self: end;
+  right: 0;
+  margin-right: 25%;
 }

@@ -24,9 +24,14 @@ export default function MilestoneMarker({
       >
         {placement == "bottom" ? (
           <>
-            <span>{label}</span>
+            <span className={position == "end" ? "self-end" : ""}>{label}</span>
             {milestoneBubble ? (
-              <span className="h-4 block w-[2px] bg-primary-light rounded-sm"></span>
+              <span
+                className={cn(
+                  "h-4 block w-[2px] bg-primary-light rounded-sm vertical-indicator",
+                  position,
+                )}
+              ></span>
             ) : null}
             {milestoneBubble}
           </>
@@ -37,7 +42,7 @@ export default function MilestoneMarker({
             {milestoneBubble ? (
               <span className="h-4 block w-[2px] bg-primary-light rounded-sm"></span>
             ) : null}
-            <span>{label}</span>
+            <span className={position == "end" ? "self-end" : ""}>{label}</span>
           </>
         )}
       </div>

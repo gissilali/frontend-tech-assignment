@@ -105,7 +105,7 @@ export default function Timeline({ events }: TimelineProps) {
           milestoneBubble={
             <MilestoneBubble
               type="secondary"
-              pointerPlacement="top"
+              pointerPlacement="top-end"
               imgSrc={family}
               imgAlt="Family"
               label="Make a contribution to my community through philantrophy"
