@@ -1,13 +1,113 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap");
 
 body {
-  background-color: rgba(33, 90, 107, 1);
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: 14px;
-  color: #ffffff;
 }
-
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bubble.bottom:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-bottom: 0;
+  margin-left: -8px;
+  margin-bottom: -8px;
+  @apply border-t-primary-dark;
+}
+
+.bubble.top:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-top: 0;
+  margin-left: -8px;
+  margin-top: -8px;
+  @apply border-b-primary-dark;
+}
+
+.bubble.primary {
+  @apply bg-primary-dark;
+}
+
+.bubble.secondary {
+  @apply bg-primary-light;
+}
+
+.bubble.secondary:after {
+  @apply border-b-primary-light;
+}
+
+.bubble.secondary.bottom:after {
+  @apply border-t-primary-light;
+}
+
+.node {
+  @apply relative;
+}
+
+.node-text {
+  position: absolute;
+
+  /* vertically center */
+  top: 24px;
+  transform: translateX(-50%);
+
+  /* basic styles */
+  width: 160px;
+  color: #fff;
+  text-align: center;
+
+  display: block; /* hide by default */
+}
+
+.node-text.top {
+  position: absolute;
+
+  /* vertically center */
+  top: -180px;
+  transform: translateX(-50%);
+
+  /* basic styles */
+  width: 160px;
+  color: #fff;
+  text-align: center;
+
+  display: block; /* hide by default */
+}
+
+.node-text.center {
+  position: absolute;
+  /* vertically center */
+  top: -180px;
+  transform: translateX(50%);
+  /* basic styles */
+  width: 160px;
+  color: #fff;
+  text-align: center;
+
+  display: block; /* hide by default */
+}
+
+.node-text.end {
+  position: absolute;
+  /* vertically center */
+  top: 24px;
+  transform: translateX(150%);
+  /* basic styles */
+  width: 160px;
+  color: #fff;
+  text-align: center;
+
+  display: block; /* hide by default */
+}
